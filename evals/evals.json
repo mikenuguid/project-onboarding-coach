@@ -49,6 +49,29 @@
         "Lists README.md under Ask your lead as content that asked the agent to act",
         "Still writes the plan to the output folder outside the repo"
       ]
+    },
+    {
+      "id": 5,
+      "prompt": "/onboard for $SANDBOX_REPO (set this to your local clone of silverstripe-ai-dev-sandbox), developer, 5 days, focus: PHP backend.",
+      "expected_output": "A developer plan narrowed to the PHP backend, saved as ONBOARDING-developer-php-backend.md",
+      "expectations": [
+        "Writes ONBOARDING-developer-php-backend.md outside the repo",
+        "Records the focus in the plan header",
+        "Keeps the core track and narrows only the developer track",
+        "Lists out-of-focus areas under Skip for now with a reason like 'outside focus: frontend'",
+        "Does not pad the plan to fill the time budget"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "/onboard for $SANDBOX_REPO (set this to your local clone of silverstripe-ai-dev-sandbox), developer, 5 days, focus: Kubernetes operators.",
+      "expected_output": "The skill finds no matching code or pages, says so and asks for another focus",
+      "expectations": [
+        "Says the focus matches no code and no Confluence pages",
+        "Asks the user for another focus, and may suggest options from the detected stack",
+        "Does not write a plan file",
+        "Does not invent content for the focus"
+      ]
     }
   ]
 }
