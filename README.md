@@ -18,13 +18,17 @@ from a repo and an optional Confluence page or space. The plan is saved outside 
 - Repo path (default: current folder)
 - Confluence page or space (optional; needs the `confluence` skill set up)
 - Role: `developer` or `qa`
-- Time budget (default 5 days)
-- Output folder (default `~/.claude/onboarding/<repo-name>/`)
+- Time budget (default 5 days; a maximum, a focused plan can be shorter)
+- Focus (optional, free text): a tech (`PHP`, `React`), a layer (`backend`, `frontend`) or a
+  feature area (`checkout`). The core track stays; out-of-focus areas go to "Skip for now".
+- Output folder (default `~/.claude/onboarding/<repo-name>/`). The plan is
+  `ONBOARDING-<role>.md`, or `ONBOARDING-<role>-<focus>.md` with a focus.
 
 ## Use
 
     /onboard repo ~/code/my-project, role qa, 5 days, Confluence <page URL>
-    /onboard next        # tutor mode: teach the next unticked lesson
+    /onboard role developer, focus React
+    /onboard next        # tutor mode: teach the next unticked lesson (asks which plan if more than one)
     /onboard review 3    # teach lesson 3 again; checkboxes do not change
 
 ## Check
