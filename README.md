@@ -1,4 +1,4 @@
-# onboard
+# Project Onboarding Coach
 
 A Claude Code skill. It writes a Markdown onboarding lesson plan for a new developer or QA
 from a repo and an optional Confluence page or space. The plan is saved outside the repo.
